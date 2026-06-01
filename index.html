@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Seaside Explorer — Year 2 Geography</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════ -->
+<nav class="site-nav" aria-label="Main navigation">
+  <span class="nav-logo" onclick="goHome()" tabindex="0" role="button" aria-label="Home">
+    &#9675; The Seaside Explorer
+  </span>
+  <button class="nav-tab active" onclick="goHome()">Home</button>
+  <button class="nav-tab" onclick="showSection('beach')">Beach</button>
+  <button class="nav-tab" onclick="showSection('rockpool')">Rock Pool</button>
+  <button class="nav-tab" onclick="showSection('cliff')">Cliff</button>
+  <button class="nav-tab" onclick="showSection('harbour')">Harbour</button>
+  <button class="nav-tab" onclick="showSection('port')">Port</button>
+  <button class="nav-tab" onclick="showSection('pier')">Pier</button>
+  <button class="nav-tab" onclick="showSection('promenade')">Promenade</button>
+  <button class="nav-tab" onclick="showSection('lighthouse')">Lighthouse</button>
+  <button class="nav-tab" onclick="showSection('ukmap')">UK Map</button>
+  <button class="nav-tab" onclick="showSection('then-now')">Then &amp; Now</button>
+  <button class="nav-tab" onclick="showSection('wildlife')">Wildlife</button>
+  <button class="nav-tab" onclick="showSection('games')">Games</button>
+</nav>
+
+<main id="main-content">
+
+<!-- ═══════════════════════════════════════
+     HOME
+     ═══════════════════════════════════════ -->
+<div id="home">
+
+  <div class="home-hero">
+    <div class="home-title-plaque">
+      <h1 class="home-title">
+        Explore the UK Seaside
+        <em>A field journal for curious explorers</em>
+      </h1>
+      <p class="home-subtitle">Tap any place to begin your adventure</p>
+    </div>
+  </div>
+
+  <div class="home-grid-section">
+    <p class="grid-heading">Choose a place to explore</p>
+
+    <div class="place-grid">
+
+      <button class="place-card" onclick="showSection('beach')" aria-label="The Beach">
+        <img class="place-card-img" src="images/beach.png" alt="A busy illustrated beach with beach huts and children playing" />
+        <div class="place-card-label">The Beach</div>
+      </button>
+
+      <button class="place-card" onclick="showSection('rockpool')" aria-label="Rock Pool">
+        <img class="place-card-img" src="images/rockpool.png" alt="A detailed rock pool with starfish and anemones" />
+        <div class="place-card-label">Rock Pool</div>
+      </button>
+
+      <button class="place-card" onclick="showSection('cliff')" aria-label="The Cliff">
+        <img class="place-card-img" src="images/cliff.png" alt="White chalk cliffs with wildflowers and seagulls" />
+        <div class="place-card-label">The Cliff</div>
+      </button>
+
+      <button class="place-card" onclick="showSection('harbour')" aria-label="Harbour">
+        <img class="place-card-img" src="images/harbour.png" alt="A colourful harbour with fishing boats" />
+        <div class="place-card-label">Harbour</div>
+      </button>
+
+      <button class="place-card" onclick="showSection('port')" aria-label="Port">
+        <img class="place-card-img" src="images/port.png" alt="A busy port with boats and a harbour wall" />
+        <div class="place-card-label">Port</div>
+      </button>
+
+      <button class="place-card" onclick="showSection('pier')" aria-label="Pier">
+        <img class="place-card-img" src="images/pier.png" alt="A Victorian pier stretching into the sea" />
+        <div class="place-card-label">Pier</div>
+      </button>
+
+      <button class="place-card" onclick="showSection('promenade')" aria-label="Promenade">
+        <img class="place-card-img" src="images/promenade.png" alt="A seaside promenade with lamp posts and beach huts" />
+        <div class="place-card-label">Promenade</div>
+      </button>
+
+      <button class="place-card" onclick="showSection('lighthouse')" aria-label="Lighthouse">
+        <img class="place-card-img" src="images/lighthouse.png" alt="A red and white striped lighthouse on rocks" />
+        <div class="place-card-label">Lighthouse</div>
+      </button>
+
+      <button class="place-card" onclick="showSection('ukmap')" aria-label="UK Map">
+        <img class="place-card-img" src="images/ukmap.png" alt="Illustrated map of the United Kingdom" />
+        <div class="place-card-label">UK Map</div>
+      </button>
+
+      <button class="place-card" onclick="showSection('then-now')" aria-label="Then and Now">
+        <img class="place-card-img" src="images/then.png" alt="Victorian seaside scene" />
+        <div class="place-card-label">Then &amp; Now</div>
+      </button>
+
+      <!-- Wildlife — wide card -->
+      <button class="place-card wide-card" onclick="showSection('wildlife')" aria-label="Coastal Wildlife">
+        <img class="place-card-img" src="images/wildlife-sheet.png" alt="Watercolour coastal wildlife illustrations" />
+        <div class="place-card-label">
+          Coastal Wildlife
+          <span class="card-desc">Meet the creatures that live by the sea</span>
+        </div>
+      </button>
+
+      <!-- Games — wide card -->
+      <button class="place-card wide-card" onclick="showSection('games')" aria-label="Games and Activities">
+        <img class="place-card-img" src="images/signs.png" alt="Driftwood signs with seaside vocabulary" />
+        <div class="place-card-label">
+          Games &amp; Activities
+          <span class="card-desc">Play, discover and learn!</span>
+        </div>
+      </button>
+
+    </div><!-- /place-grid -->
+  </div><!-- /home-grid-section -->
+</div><!-- /home -->
+
+
+<!-- ═══════════════════════════════════════
+     BEACH
+     ═══════════════════════════════════════ -->
+<section id="beach" class="section-page" aria-label="The Beach">
+  <div class="section-header">
+    <img class="section-header-img" src="images/beach.png" alt="A busy UK seaside beach with children playing" />
+    <h1 class="section-header-title">The Beach</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="journal-card card-definition">
+      <div class="card-heading">What is a beach?</div>
+      <p class="definition-text">A sandy or pebbly place beside the sea.</p>
+      <button class="audio-btn" onclick="playAudio('#')">&#9654; Listen</button>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Look closely — spot these</div>
+      <div class="spot-chips">
+        <span class="spot-chip" data-word="waves">waves</span>
+        <span class="spot-chip" data-word="shells">shells</span>
+        <span class="spot-chip" data-word="seaweed">seaweed</span>
+        <span class="spot-chip" data-word="sand">sand</span>
+        <span class="spot-chip" data-word="beach huts">beach huts</span>
+      </div>
+      <p style="margin-top:0.6rem;font-family:var(--font-hand);font-size:0.8rem;color:var(--drift);">Tap each one when you spot it in the picture!</p>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Key words</div>
+      <div class="vocab-row">
+        <span class="vocab-sign">tide</span>
+        <span class="vocab-sign">coast</span>
+        <span class="vocab-sign">shoreline</span>
+      </div>
+    </div>
+
+    <div class="journal-card card-fact">
+      <div class="card-heading">Did you know?</div>
+      <p>The UK has over 11,000 miles of coastline. Some beaches are sandy, some are pebbly — it depends on what the rocks nearby are made of!</p>
+    </div>
+
+    <div class="journal-card card-talk">
+      <div class="card-heading">Talk partners</div>
+      <p class="talk-question">"What can people do at the beach?"</p>
+    </div>
+
+    <div class="video-slot" role="img" aria-label="Video placeholder: waves at the beach">
+      <div class="play-ring">&#9654;</div>
+      <span>Waves at the Beach</span>
+      <span style="font-size:0.72rem;opacity:0.5;">Replace with YouTube embed</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     ROCK POOL
+     ═══════════════════════════════════════ -->
+<section id="rockpool" class="section-page" aria-label="Rock Pool">
+  <div class="section-header">
+    <img class="section-header-img" src="images/rockpool.png" alt="A detailed rock pool scene with crabs and anemones" />
+    <h1 class="section-header-title">The Rock Pool</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="journal-card card-definition">
+      <div class="card-heading">What is a rock pool?</div>
+      <p class="definition-text">A small pool of seawater left between rocks when the tide goes out.</p>
+      <button class="audio-btn" onclick="playAudio('#')">&#9654; Listen</button>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Look closely — spot these</div>
+      <div class="spot-chips">
+        <span class="spot-chip" data-word="crab">crab</span>
+        <span class="spot-chip" data-word="seaweed">seaweed</span>
+        <span class="spot-chip" data-word="mussels">mussels</span>
+        <span class="spot-chip" data-word="limpet">limpet</span>
+        <span class="spot-chip" data-word="anemone">anemone</span>
+      </div>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Key words</div>
+      <div class="vocab-row">
+        <span class="vocab-sign">tide</span>
+        <span class="vocab-sign">habitat</span>
+        <span class="vocab-sign">creature</span>
+      </div>
+    </div>
+
+    <div class="journal-card card-fact">
+      <div class="card-heading">Did you know?</div>
+      <p>Rock pools are like tiny hidden worlds. Hundreds of creatures can live in just one pool! When the tide comes back in, the creatures are covered with fresh seawater again.</p>
+    </div>
+
+    <div class="journal-card card-talk">
+      <div class="card-heading">Talk partners</div>
+      <p class="talk-question">"Why do we need to look carefully in a rock pool?"</p>
+    </div>
+
+    <div class="video-slot" role="img" aria-label="Video: rock pool close-up">
+      <div class="play-ring">&#9654;</div>
+      <span>Rock Pool Close-up</span>
+      <span style="font-size:0.72rem;opacity:0.5;">Replace with YouTube embed</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CLIFF
+     ═══════════════════════════════════════ -->
+<section id="cliff" class="section-page" aria-label="The Cliff">
+  <div class="section-header">
+    <img class="section-header-img" src="images/cliff.png" alt="White chalk cliffs with wildflowers and seagulls" />
+    <h1 class="section-header-title">The Cliff</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="journal-card card-definition">
+      <div class="card-heading">What is a cliff?</div>
+      <p class="definition-text">A steep rock face beside the sea.</p>
+      <button class="audio-btn" onclick="playAudio('#')">&#9654; Listen</button>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Look closely — spot these</div>
+      <div class="spot-chips">
+        <span class="spot-chip" data-word="rocks">rocks</span>
+        <span class="spot-chip" data-word="sea">sea</span>
+        <span class="spot-chip" data-word="birds">birds</span>
+        <span class="spot-chip" data-word="wildflowers">wildflowers</span>
+        <span class="spot-chip" data-word="waves">waves</span>
+      </div>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Key words</div>
+      <div class="vocab-row">
+        <span class="vocab-sign">erosion</span>
+        <span class="vocab-sign">steep</span>
+        <span class="vocab-sign">coastal</span>
+      </div>
+    </div>
+
+    <div class="journal-card card-fact">
+      <div class="card-heading">Did you know?</div>
+      <p>The sea slowly wears away cliffs over thousands of years — this is called erosion. The famous White Cliffs of Dover are made of chalk!</p>
+    </div>
+
+    <div class="journal-card card-safety">
+      <div class="card-heading">Stay safe!</div>
+      <p>Always stay well back from cliff edges. The ground can crumble without any warning.</p>
+    </div>
+
+    <div class="journal-card card-talk">
+      <div class="card-heading">Talk partners</div>
+      <p class="talk-question">"Why must we always stay away from cliff edges?"</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     HARBOUR
+     ═══════════════════════════════════════ -->
+<section id="harbour" class="section-page" aria-label="Harbour">
+  <div class="section-header">
+    <img class="section-header-img" src="images/harbour.png" alt="A beautiful harbour with colourful fishing boats" />
+    <h1 class="section-header-title">The Harbour</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="journal-card card-definition">
+      <div class="card-heading">What is a harbour?</div>
+      <p class="definition-text">A sheltered place where boats can stay safely.</p>
+      <button class="audio-btn" onclick="playAudio('#')">&#9654; Listen</button>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Look closely — spot these</div>
+      <div class="spot-chips">
+        <span class="spot-chip" data-word="fishing boats">fishing boats</span>
+        <span class="spot-chip" data-word="ropes">ropes</span>
+        <span class="spot-chip" data-word="harbour wall">harbour wall</span>
+        <span class="spot-chip" data-word="seagulls">seagulls</span>
+        <span class="spot-chip" data-word="buoys">buoys</span>
+      </div>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Key words</div>
+      <div class="vocab-row">
+        <span class="vocab-sign">shelter</span>
+        <span class="vocab-sign">mooring</span>
+        <span class="vocab-sign">fisherman</span>
+      </div>
+    </div>
+
+    <div class="journal-card card-fact">
+      <div class="card-heading">Did you know?</div>
+      <p>St Ives in Cornwall has a beautiful harbour. Fishermen have used it for hundreds of years to land their catch safely after a long trip out to sea.</p>
+    </div>
+
+    <div class="journal-card card-talk">
+      <div class="card-heading">Talk partners</div>
+      <p class="talk-question">"Why do boats need a safe harbour?"</p>
+    </div>
+
+    <div class="video-slot" role="img" aria-label="Video: boats in a harbour">
+      <div class="play-ring">&#9654;</div>
+      <span>Boats in a Harbour</span>
+      <span style="font-size:0.72rem;opacity:0.5;">Replace with YouTube embed</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     PORT
+     ═══════════════════════════════════════ -->
+<section id="port" class="section-page" aria-label="Port">
+  <div class="section-header">
+    <img class="section-header-img" src="images/port.png" alt="A busy port with boats and harbour wall" />
+    <h1 class="section-header-title">The Port</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="journal-card card-definition">
+      <div class="card-heading">What is a port?</div>
+      <p class="definition-text">A place where ships load and unload goods or passengers.</p>
+      <button class="audio-btn" onclick="playAudio('#')">&#9654; Listen</button>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Look closely — spot these</div>
+      <div class="spot-chips">
+        <span class="spot-chip" data-word="large ships">large ships</span>
+        <span class="spot-chip" data-word="cranes">cranes</span>
+        <span class="spot-chip" data-word="containers">containers</span>
+        <span class="spot-chip" data-word="warehouses">warehouses</span>
+        <span class="spot-chip" data-word="lorries">lorries</span>
+      </div>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Key words</div>
+      <div class="vocab-row">
+        <span class="vocab-sign">cargo</span>
+        <span class="vocab-sign">import</span>
+        <span class="vocab-sign">export</span>
+      </div>
+    </div>
+
+    <div class="journal-card card-fact">
+      <div class="card-heading">Did you know?</div>
+      <p>The Port of Felixstowe in Suffolk is the UK's biggest port. Huge ships bring bananas, electronics and cars from all over the world!</p>
+    </div>
+
+    <div class="journal-card card-talk">
+      <div class="card-heading">Talk partners</div>
+      <p class="talk-question">"How is a port different from a harbour?"</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     PIER
+     ═══════════════════════════════════════ -->
+<section id="pier" class="section-page" aria-label="Pier">
+  <div class="section-header">
+    <img class="section-header-img" src="images/pier.png" alt="A Victorian pier with ice cream stall and deckchairs" />
+    <h1 class="section-header-title">The Pier</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="journal-card card-definition">
+      <div class="card-heading">What is a pier?</div>
+      <p class="definition-text">A structure built out into the sea, so you can walk above the waves.</p>
+      <button class="audio-btn" onclick="playAudio('#')">&#9654; Listen</button>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Look closely — spot these</div>
+      <div class="spot-chips">
+        <span class="spot-chip" data-word="wooden legs">wooden legs</span>
+        <span class="spot-chip" data-word="people walking">people walking</span>
+        <span class="spot-chip" data-word="waves underneath">waves underneath</span>
+        <span class="spot-chip" data-word="flags">flags</span>
+        <span class="spot-chip" data-word="ice cream stall">ice cream stall</span>
+      </div>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Key words</div>
+      <div class="vocab-row">
+        <span class="vocab-sign">structure</span>
+        <span class="vocab-sign">Victorian</span>
+        <span class="vocab-sign">promenade</span>
+      </div>
+    </div>
+
+    <div class="journal-card card-fact">
+      <div class="card-heading">Did you know?</div>
+      <p>Brighton Pier is over 500 metres long! Piers were built in Victorian times so families could stroll out over the sea for a breath of fresh air.</p>
+    </div>
+
+    <div class="journal-card card-talk">
+      <div class="card-heading">Talk partners</div>
+      <p class="talk-question">"Why do people visit piers?"</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     PROMENADE
+     ═══════════════════════════════════════ -->
+<section id="promenade" class="section-page" aria-label="Promenade">
+  <div class="section-header">
+    <img class="section-header-img" src="images/promenade.png" alt="A seaside promenade with lamp posts, bunting and beach huts" />
+    <h1 class="section-header-title">The Promenade</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="journal-card card-definition">
+      <div class="card-heading">What is a promenade?</div>
+      <p class="definition-text">A path beside the beach where people can walk and enjoy the sea air.</p>
+      <button class="audio-btn" onclick="playAudio('#')">&#9654; Listen</button>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Look closely — spot these</div>
+      <div class="spot-chips">
+        <span class="spot-chip" data-word="benches">benches</span>
+        <span class="spot-chip" data-word="railings">railings</span>
+        <span class="spot-chip" data-word="lamp posts">lamp posts</span>
+        <span class="spot-chip" data-word="beach huts">beach huts</span>
+        <span class="spot-chip" data-word="bunting">bunting</span>
+      </div>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Key words</div>
+      <div class="vocab-row">
+        <span class="vocab-sign">seafront</span>
+        <span class="vocab-sign">railings</span>
+        <span class="vocab-sign">leisure</span>
+      </div>
+    </div>
+
+    <div class="journal-card card-fact">
+      <div class="card-heading">Did you know?</div>
+      <p>The word "promenade" comes from French and means a leisurely walk. Victorian families dressed in their finest clothes to stroll along the prom!</p>
+    </div>
+
+    <div class="journal-card card-talk">
+      <div class="card-heading">Talk partners</div>
+      <p class="talk-question">"What might you see on a promenade?"</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     LIGHTHOUSE
+     ═══════════════════════════════════════ -->
+<section id="lighthouse" class="section-page" aria-label="Lighthouse">
+  <div class="section-header">
+    <img class="section-header-img" src="images/lighthouse.png" alt="A red and white striped lighthouse on rocky coast" />
+    <h1 class="section-header-title">The Lighthouse</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="journal-card card-definition">
+      <div class="card-heading">What is a lighthouse?</div>
+      <p class="definition-text">A tall building with a bright flashing light to guide ships safely past rocks.</p>
+      <button class="audio-btn" onclick="playAudio('#')">&#9654; Listen</button>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Look closely — spot these</div>
+      <div class="spot-chips">
+        <span class="spot-chip" data-word="light">light</span>
+        <span class="spot-chip" data-word="stripes">stripes</span>
+        <span class="spot-chip" data-word="rocks">rocks</span>
+        <span class="spot-chip" data-word="sea">sea</span>
+        <span class="spot-chip" data-word="seagulls">seagulls</span>
+      </div>
+    </div>
+
+    <div class="journal-card">
+      <div class="card-heading">Key words</div>
+      <div class="vocab-row">
+        <span class="vocab-sign">beacon</span>
+        <span class="vocab-sign">warning</span>
+        <span class="vocab-sign">navigation</span>
+      </div>
+    </div>
+
+    <div class="journal-card card-fact">
+      <div class="card-heading">Did you know?</div>
+      <p>Lighthouse keepers used to live inside lighthouses and wind up the light by hand every night! Today most lighthouses are controlled automatically.</p>
+    </div>
+
+    <div class="journal-card card-talk">
+      <div class="card-heading">Talk partners</div>
+      <p class="talk-question">"Why are lighthouses so important?"</p>
+    </div>
+
+    <div class="video-slot" role="img" aria-label="Video: lighthouse light">
+      <div class="play-ring">&#9654;</div>
+      <span>How a Lighthouse Works</span>
+      <span style="font-size:0.72rem;opacity:0.5;">Replace with YouTube embed</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     UK MAP
+     ═══════════════════════════════════════ -->
+<section id="ukmap" class="section-page" aria-label="UK Map">
+  <div class="section-header">
+    <img class="section-header-img" src="images/ukmap.png" alt="Illustrated map of the United Kingdom" />
+    <h1 class="section-header-title">The UK Map</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="journal-card card-definition">
+      <p style="font-family:var(--font-body);font-size:1rem;color:var(--ink-soft);">The United Kingdom is made up of four countries. Can you find them all? Can you spot St Ives?</p>
+    </div>
+
+    <div class="ukmap-img-wrap" role="img" aria-label="Illustrated UK map showing St Ives in Cornwall">
+      <img src="images/ukmap.png" alt="Illustrated map of the UK with Scotland, England, Wales and St Ives marked" />
+    </div>
+
+    <div class="map-info-box" id="map-tooltip">
+      Look carefully at the map — can you find St Ives?
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:1rem;">
+      <button class="journal-card" style="cursor:pointer;text-align:left;border:none;" onclick="document.getElementById('map-tooltip').textContent='England is the largest country in the UK. St Ives is in England, in the very south-west corner called Cornwall!'">
+        <div class="card-heading">England</div>
+        <p style="font-size:0.9rem;color:var(--ink-soft);">The largest country. Tap to find out more.</p>
+      </button>
+      <button class="journal-card" style="cursor:pointer;text-align:left;border:none;" onclick="document.getElementById('map-tooltip').textContent='Scotland is the most northerly country in the UK, famous for its mountains, lochs and castles.'">
+        <div class="card-heading">Scotland</div>
+        <p style="font-size:0.9rem;color:var(--ink-soft);">Mountains and lochs. Tap to find out more.</p>
+      </button>
+      <button class="journal-card" style="cursor:pointer;text-align:left;border:none;" onclick="document.getElementById('map-tooltip').textContent='Wales is west of England. It has a beautiful coastline, mountains, and a dragon on its flag!'">
+        <div class="card-heading">Wales</div>
+        <p style="font-size:0.9rem;color:var(--ink-soft);">Famous for dragons! Tap to find out more.</p>
+      </button>
+      <button class="journal-card" style="cursor:pointer;text-align:left;border:none;" onclick="document.getElementById('map-tooltip').textContent='St Ives is a beautiful seaside town right at the tip of Cornwall in England — surrounded by sea on three sides!'">
+        <div class="card-heading">St Ives</div>
+        <p style="font-size:0.9rem;color:var(--ink-soft);">Our seaside town. Tap to find out more.</p>
+      </button>
+    </div>
+
+    <div class="journal-card card-talk" style="margin-top:1rem;">
+      <div class="card-heading">Talk partners</div>
+      <p class="talk-question">"Where is St Ives? Is it near the sea? Which country of the UK is it in?"</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     THEN & NOW
+     ═══════════════════════════════════════ -->
+<section id="then-now" class="section-page" aria-label="Seaside Then and Now">
+  <div class="section-header">
+    <img class="section-header-img" src="images/then.png" alt="Victorian seaside scene with families in period dress" />
+    <h1 class="section-header-title">Then &amp; Now</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="then-now-grid">
+      <div class="then-card">
+        <img src="images/then.png" alt="Victorian seaside — 100 years ago" />
+        <div class="then-card-body">
+          <h3>100 Years Ago</h3>
+          <div class="then-item">Long dresses and suits at the beach</div>
+          <div class="then-item">Steam trains to the seaside</div>
+          <div class="then-item">Simple wooden beach huts</div>
+          <div class="then-item">Donkey rides on the sand</div>
+          <div class="then-item">Bucket and spade games</div>
+        </div>
+      </div>
+      <div class="now-card">
+        <img src="images/now.png" alt="Modern seaside — today" />
+        <div class="then-card-body">
+          <h3>Today</h3>
+          <div class="then-item">Swimwear and shorts</div>
+          <div class="then-item">Cars and coaches</div>
+          <div class="then-item">Colourful painted beach huts</div>
+          <div class="then-item">Surfing and water sports</div>
+          <div class="then-item">Bucket and spade — still the same!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sort game -->
+    <div class="journal-card" style="margin-bottom:0.75rem;">
+      <div class="card-heading">Sort it!</div>
+      <p style="font-family:var(--font-hand);font-size:0.85rem;color:var(--drift);">Drag each card into the right box.</p>
+    </div>
+
+    <div class="sort-pool" id="sort-pool">
+      <div class="sort-item" data-id="bathing-costume" draggable="true">Bathing costume</div>
+      <div class="sort-item" data-id="swimming-costume" draggable="true">Bikini</div>
+      <div class="sort-item" data-id="donkey-ride" draggable="true">Donkey ride</div>
+      <div class="sort-item" data-id="ice-cream" draggable="true">Ice cream</div>
+      <div class="sort-item" data-id="steam-train" draggable="true">Steam train</div>
+      <div class="sort-item" data-id="car" draggable="true">Drive by car</div>
+      <div class="sort-item" data-id="bucket-spade" draggable="true">Bucket &amp; spade</div>
+      <div class="sort-item" data-id="smartphone" draggable="true">Smartphone</div>
+      <div class="sort-item" data-id="beach-hut" draggable="true">Beach hut</div>
+      <div class="sort-item" data-id="gramophone" draggable="true">Gramophone</div>
+    </div>
+
+    <div class="sort-zones">
+      <div class="sort-zone" data-zone="then"><h4>100 Years Ago</h4></div>
+      <div class="sort-zone" data-zone="both"><h4>Both</h4></div>
+      <div class="sort-zone" data-zone="now"><h4>Today</h4></div>
+    </div>
+
+    <div class="journal-card card-talk" style="margin-top:1rem;">
+      <div class="card-heading">Talk partners</div>
+      <p class="talk-question">"What is the same about the seaside now as 100 years ago? What is different?"</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     COASTAL WILDLIFE
+     ═══════════════════════════════════════ -->
+<section id="wildlife" class="section-page" aria-label="Coastal Wildlife">
+  <div class="section-header">
+    <img class="section-header-img" src="images/wildlife-sheet.png" alt="Watercolour illustrations of coastal wildlife" style="object-position:center top;" />
+    <h1 class="section-header-title">Coastal Wildlife</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="journal-card card-definition" style="margin-bottom:1.25rem;">
+      <p style="font-family:var(--font-body);font-size:1rem;">The seaside is home to some wonderful creatures. How many can you spot?</p>
+    </div>
+
+    <!-- Full wildlife sheet -->
+    <div class="wildlife-sheet-wrap">
+      <img src="images/wildlife-sheet.png" alt="Coastal wildlife: oystercatcher, seal, seagull, jellyfish, mussels, crab, shell, seaweed" />
+    </div>
+
+    <div class="wildlife-grid">
+
+      <div class="wildlife-card">
+        <div class="wildlife-name">Seagull</div>
+        <div class="wildlife-fact">Clever birds that will steal your chips! They nest on cliffs and rooftops.</div>
+        <span class="wildlife-where">Cliffs, beaches, harbours</span>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-name">Oystercatcher</div>
+        <div class="wildlife-fact">This bold black-and-white bird has a bright orange beak — perfect for prising open mussels!</div>
+        <span class="wildlife-where">Rocky shores, beaches</span>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-name">Seal</div>
+        <div class="wildlife-fact">Grey seals love to bask on rocks. They can hold their breath for up to 30 minutes underwater!</div>
+        <span class="wildlife-where">Rocky coasts, beaches</span>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-name">Crab</div>
+        <div class="wildlife-fact">Crabs walk sideways and can regrow a lost claw. They hide under rocks at low tide.</div>
+        <span class="wildlife-where">Rock pools, beaches</span>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-name">Jellyfish</div>
+        <div class="wildlife-fact">Jellyfish have no brain, no heart and no eyes — but they have lived on Earth for over 500 million years!</div>
+        <span class="wildlife-where">In the sea, washed on beaches</span>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-name">Mussels</div>
+        <div class="wildlife-fact">Mussels cling to rocks in large clusters. They filter seawater to find their food.</div>
+        <span class="wildlife-where">Rocks, rock pools</span>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-name">Shells</div>
+        <div class="wildlife-fact">Shells are the hard homes of sea creatures. Each type of shell belongs to a different animal.</div>
+        <span class="wildlife-where">Beaches, rock pools</span>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-name">Seaweed</div>
+        <div class="wildlife-fact">Seaweed is food and shelter for many sea creatures. People even use it to make food and medicines!</div>
+        <span class="wildlife-where">Rock pools, beaches, rocks</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     GAMES HUB
+     ═══════════════════════════════════════ -->
+<section id="games" class="section-page" aria-label="Games">
+  <div class="section-header">
+    <img class="section-header-img" src="images/signs.png" alt="Driftwood signs with seaside vocabulary words" style="object-fit:contain;background:var(--paper-dark);" />
+    <h1 class="section-header-title">Games &amp; Activities</h1>
+  </div>
+  <button class="back-btn" onclick="goHome()">&#8592; Back to the map</button>
+  <div class="section-body">
+
+    <div class="games-grid">
+
+      <button class="game-card" onclick="showSection('game-match')">
+        <div class="game-icon-wrap">&#128290;</div>
+        <div class="game-title">Match the Word</div>
+        <div class="game-desc">Match seaside words to the right pictures.</div>
+      </button>
+
+      <button class="game-card" onclick="showSection('game-spotit')">
+        <div class="game-icon-wrap">&#128065;</div>
+        <div class="game-title">Spot It!</div>
+        <div class="game-desc">Find hidden objects in the seaside scene.</div>
+      </button>
+
+      <button class="game-card" onclick="showSection('game-tonow')">
+        <div class="game-icon-wrap">&#128336;</div>
+        <div class="game-title">Then or Now?</div>
+        <div class="game-desc">Sort pictures into 100 years ago or today.</div>
+      </button>
+
+      <button class="game-card" onclick="showSection('game-hop')">
+        <div class="game-icon-wrap">&#9875;</div>
+        <div class="game-title">Harbour or Port?</div>
+        <div class="game-desc">Read each clue and decide!</div>
+      </button>
+
+      <button class="game-card" onclick="showSection('game-rockpool')">
+        <div class="game-icon-wrap">&#129408;</div>
+        <div class="game-title">Rock Pool Explorer</div>
+        <div class="game-desc">Tap the creatures to reveal their secrets.</div>
+      </button>
+
+      <button class="game-card" onclick="showSection('game-mapquest')">
+        <div class="game-icon-wrap">&#128506;</div>
+        <div class="game-title">Map Quest</div>
+        <div class="game-desc">Can you find England, Scotland, Wales and St Ives?</div>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     GAME: MATCH THE WORD
+     ═══════════════════════════════════════ -->
+<section id="game-match" class="section-page" aria-label="Match the Word Game">
+  <div class="section-header" style="height:120px;background:var(--navy);">
+    <h1 class="section-header-title" style="bottom:1rem;">Match the Word</h1>
+  </div>
+  <button class="back-btn" onclick="showSection('games')">&#8592; Back to Games</button>
+  <div class="section-body">
+    <div class="journal-card" style="margin-bottom:1rem;">
+      <p style="font-family:var(--font-hand);">Click a word, then click the matching picture.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;align-items:start;">
+      <div id="match-words" style="display:flex;flex-direction:column;gap:0.5rem;"></div>
+      <div id="match-images" style="display:flex;flex-direction:column;gap:0.5rem;align-items:center;"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     GAME: SPOT IT
+     ═══════════════════════════════════════ -->
+<section id="game-spotit" class="section-page" aria-label="Spot It Game">
+  <div class="section-header" style="height:120px;background:var(--sea);">
+    <h1 class="section-header-title" style="bottom:1rem;">Spot It!</h1>
+  </div>
+  <button class="back-btn" onclick="showSection('games')">&#8592; Back to Games</button>
+  <div class="section-body">
+    <div class="journal-card" style="margin-bottom:1rem;">
+      <p style="font-family:var(--font-hand);">Can you find all 6 hidden things? Tap them!</p>
+    </div>
+
+    <div class="spot-scene" role="img" aria-label="Seaside scene with hidden objects">
+      <span class="spot-obj" data-name="seagull"    style="top:8%;left:20%;"  onclick="foundObj(this,'seagull')"    aria-label="Seagull">&#128038;</span>
+      <span class="spot-obj" data-name="lighthouse" style="top:5%;right:8%;"  onclick="foundObj(this,'lighthouse')" aria-label="Lighthouse">&#128956;</span>
+      <span class="spot-obj" data-name="boat"       style="top:38%;left:55%;" onclick="foundObj(this,'boat')"       aria-label="Boat">&#9973;</span>
+      <span class="spot-obj" data-name="shell"      style="top:65%;left:15%;" onclick="foundObj(this,'shell')"      aria-label="Shell">&#128026;</span>
+      <span class="spot-obj" data-name="crab"       style="top:72%;right:18%;"onclick="foundObj(this,'crab')"       aria-label="Crab">&#129408;</span>
+      <span class="spot-obj" data-name="seaweed"    style="top:80%;left:40%;" onclick="foundObj(this,'seaweed')"    aria-label="Seaweed">&#127807;</span>
+    </div>
+
+    <p id="spot-result" style="text-align:center;font-family:var(--font-heading);font-style:italic;font-size:1.1rem;color:var(--coast-green);min-height:28px;margin:0.75rem 0;" role="status" aria-live="polite"></p>
+
+    <div class="spot-chips" style="justify-content:center;">
+      <span class="spot-chip" data-name="shell">Shell</span>
+      <span class="spot-chip" data-name="crab">Crab</span>
+      <span class="spot-chip" data-name="seagull">Seagull</span>
+      <span class="spot-chip" data-name="boat">Boat</span>
+      <span class="spot-chip" data-name="lighthouse">Lighthouse</span>
+      <span class="spot-chip" data-name="seaweed">Seaweed</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     GAME: THEN OR NOW
+     ═══════════════════════════════════════ -->
+<section id="game-tonow" class="section-page" aria-label="Then or Now Game">
+  <div class="section-header" style="height:120px;background:var(--drift-dark);">
+    <h1 class="section-header-title" style="bottom:1rem;color:var(--sand-light);">Then or Now?</h1>
+  </div>
+  <button class="back-btn" onclick="showSection('games')">&#8592; Back to Games</button>
+  <div class="section-body">
+    <div class="journal-card" style="margin-bottom:1rem;">
+      <p style="font-family:var(--font-hand);">Tap a card to select it, then choose where it belongs.</p>
+    </div>
+    <div id="ton-grid" class="ton-grid"></div>
+    <div class="ton-buttons">
+      <button class="ton-btn" onclick="placeTon('then')">100 Years Ago</button>
+      <button class="ton-btn" onclick="placeTon('both')">Both</button>
+      <button class="ton-btn" onclick="placeTon('now')">Today</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     GAME: HARBOUR OR PORT
+     ═══════════════════════════════════════ -->
+<section id="game-hop" class="section-page" aria-label="Harbour or Port Game">
+  <div class="section-header" style="height:120px;background:var(--navy-soft);">
+    <h1 class="section-header-title" style="bottom:1rem;">Harbour or Port?</h1>
+  </div>
+  <button class="back-btn" onclick="showSection('games')">&#8592; Back to Games</button>
+  <div class="section-body">
+    <div class="journal-card" style="margin-bottom:1rem;">
+      <p style="font-family:var(--font-hand);">Read each clue. Is it a harbour or a port?</p>
+    </div>
+    <div class="hop-clue-card">
+      <p class="hop-clue" id="hop-clue">Loading&hellip;</p>
+      <p id="hop-result" class="hop-result" role="status" aria-live="polite"></p>
+      <div class="hop-buttons">
+        <button class="hop-btn" onclick="answerHop('harbour')">Harbour</button>
+        <button class="hop-btn" onclick="answerHop('port')">Port</button>
+      </div>
+    </div>
+    <p style="text-align:center;font-family:var(--font-hand);margin-bottom:0.75rem;" id="hop-score">Score: 0</p>
+    <div style="text-align:center;">
+      <button class="reset-btn" onclick="resetHop()">&#8635; Play Again</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     GAME: ROCK POOL EXPLORER
+     ═══════════════════════════════════════ -->
+<section id="game-rockpool" class="section-page" aria-label="Rock Pool Explorer">
+  <div class="section-header" style="height:120px;background:var(--coast-green);">
+    <h1 class="section-header-title" style="bottom:1rem;">Rock Pool Explorer</h1>
+  </div>
+  <button class="back-btn" onclick="showSection('games')">&#8592; Back to Games</button>
+  <div class="section-body">
+    <div class="journal-card" style="margin-bottom:1rem;">
+      <p style="font-family:var(--font-hand);">Tap the creatures to discover their secrets!</p>
+    </div>
+    <div class="rock-pool-scene" role="img" aria-label="Interactive rock pool">
+      <span class="pool-creature" style="top:20%;left:18%;"  onclick="clickCreature('crab')"     tabindex="0" aria-label="Crab">&#129408;</span>
+      <span class="pool-creature" style="top:30%;left:52%;"  onclick="clickCreature('anemone')"  tabindex="0" aria-label="Anemone">&#127804;</span>
+      <span class="pool-creature" style="top:50%;left:30%;"  onclick="clickCreature('mussel')"   tabindex="0" aria-label="Mussel">&#129450;</span>
+      <span class="pool-creature" style="top:15%;right:22%;" onclick="clickCreature('starfish')" tabindex="0" aria-label="Starfish">&#11088;</span>
+      <span class="pool-creature" style="top:60%;right:15%;" onclick="clickCreature('limpet')"   tabindex="0" aria-label="Limpet">&#128026;</span>
+      <span class="pool-creature" style="top:10%;left:62%;"  onclick="clickCreature('shrimp')"   tabindex="0" aria-label="Shrimp">&#129456;</span>
+      <span class="pool-creature" style="top:70%;left:12%;"  onclick="clickCreature('seaweed')"  tabindex="0" aria-label="Seaweed">&#127807;</span>
+    </div>
+    <div class="creature-info" id="creature-info" role="status" aria-live="polite">
+      Tap a creature to find out about it!
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     GAME: MAP QUEST
+     ═══════════════════════════════════════ -->
+<section id="game-mapquest" class="section-page" aria-label="Map Quest Game">
+  <div class="section-header" style="height:120px;background:var(--coast-green);">
+    <h1 class="section-header-title" style="bottom:1rem;">Map Quest</h1>
+  </div>
+  <button class="back-btn" onclick="showSection('games')">&#8592; Back to Games</button>
+  <div class="section-body">
+
+    <div class="mapquest-prompt" id="mq-prompt" role="status" aria-live="polite">Loading&hellip;</div>
+
+    <div class="mapquest-wrap">
+      <svg viewBox="0 0 300 420" xmlns="http://www.w3.org/2000/svg" aria-label="UK Map for Map Quest">
+        <rect width="300" height="420" fill="#a8cfe0" rx="12"/>
+        <path class="mapquest-region" id="mq-scotland"
+          d="M100,10 L160,10 L175,30 L185,60 L165,90 L150,110 L130,115 L110,100 L95,80 L90,55 L95,30 Z"
+          fill="#adc4a0" stroke="#7a9e7e" stroke-width="1.5"
+          tabindex="0" role="button" aria-label="Scotland"
+          onclick="clickMqRegion('mq-scotland')"
+          onkeydown="if(event.key==='Enter')clickMqRegion('mq-scotland')"/>
+        <text x="140" y="65" font-size="11" fill="#2a4020" text-anchor="middle" font-family="Georgia,serif" pointer-events="none">Scotland</text>
+
+        <path class="mapquest-region" id="mq-nireland"
+          d="M65,130 L90,125 L100,135 L100,155 L85,165 L65,160 L55,148 Z"
+          fill="#c8d8c0" stroke="#7a9e7e" stroke-width="1.5"
+          tabindex="0" role="button" aria-label="Northern Ireland"
+          onclick="clickMqRegion('mq-nireland')"
+          onkeydown="if(event.key==='Enter')clickMqRegion('mq-nireland')"/>
+        <text x="78" y="147" font-size="7" fill="#2a4020" text-anchor="middle" font-family="Georgia,serif" pointer-events="none">N. Ireland</text>
+
+        <path class="mapquest-region" id="mq-wales"
+          d="M108,270 L130,260 L140,270 L138,300 L125,315 L108,310 L100,295 L102,278 Z"
+          fill="#c0d4a8" stroke="#7a9e7e" stroke-width="1.5"
+          tabindex="0" role="button" aria-label="Wales"
+          onclick="clickMqRegion('mq-wales')"
+          onkeydown="if(event.key==='Enter')clickMqRegion('mq-wales')"/>
+        <text x="120" y="292" font-size="10" fill="#2a4020" text-anchor="middle" font-family="Georgia,serif" pointer-events="none">Wales</text>
+
+        <path class="mapquest-region" id="mq-england"
+          d="M128,115 L150,110 L168,120 L178,145 L185,175 L182,210 L175,240 L165,265 L140,270 L130,260 L108,270 L104,250 L108,220 L115,195 L118,165 L122,140 Z"
+          fill="#d4e8c8" stroke="#7a9e7e" stroke-width="1.5"
+          tabindex="0" role="button" aria-label="England"
+          onclick="clickMqRegion('mq-england')"
+          onkeydown="if(event.key==='Enter')clickMqRegion('mq-england')"/>
+        <path d="M108,310 L100,330 L90,345 L96,355 L110,345 L118,330 L125,315 Z" fill="#d4e8c8" stroke="#7a9e7e" stroke-width="1"/>
+        <text x="148" y="200" font-size="12" fill="#2a4020" text-anchor="middle" font-family="Georgia,serif" pointer-events="none">England</text>
+
+        <circle class="mapquest-region" id="mq-stives"
+          cx="93" cy="348" r="8" fill="#c0392b" stroke="white" stroke-width="2"
+          tabindex="0" role="button" aria-label="St Ives"
+          onclick="clickMqRegion('mq-stives')"
+          onkeydown="if(event.key==='Enter')clickMqRegion('mq-stives')"/>
+        <text x="107" y="352" font-size="9" fill="#8b1a1a" text-anchor="start" font-family="Georgia,serif" pointer-events="none">St Ives</text>
+      </svg>
+    </div>
+
+    <p style="text-align:center;font-family:var(--font-hand);margin-bottom:0.75rem;">
+      <span class="score-tag" id="mq-score-display">Score: 0 / 5</span>
+    </p>
+    <div style="text-align:center;">
+      <button class="reset-btn" onclick="resetMapQuest()">&#8635; Play Again</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+<script>
+// Spot It helper (inline since it uses direct DOM)
+var spotFound = 0;
+function foundObj(el, name) {
+  if (el.classList.contains('found')) return;
+  el.classList.add('found');
+  spotFound++;
+  var chip = document.querySelector('.spot-chip[data-name="' + name + '"]');
+  if (chip) chip.classList.add('found');
+  if (spotFound === 6) {
+    setTimeout(function() {
+      var r = document.getElementById('spot-result');
+      if (r) r.textContent = 'Wonderful! You found everything!';
+    }, 300);
+  }
+}
+// Score badge update
+var _origShowMqStep = showMqStep;
+function showMqStep() {
+  _origShowMqStep();
+  var badge = document.getElementById('mq-score-display');
+  if (badge) badge.textContent = 'Score: ' + mqScore + ' / 5';
+}
+</script>
+
+</body>
+</html>
